@@ -1,7 +1,7 @@
 package first_session;
 import java.util.Scanner;
 
-//A Java PRogram to Sort an Array in ascending or descending order.
+//A Java PRogram to Sort an Array in ascending.
 public class SortArray {
 	
 	public static void main(String[] args) {
