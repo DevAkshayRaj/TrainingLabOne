@@ -1,0 +1,13 @@
+<!ELEMENT Items (Customer,Item+)>
+<!ELEMENT Customer (Name,Date,Number)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Date (#PCDATA)>
+<!ELEMENT Number (#PCDATA)>
+<!ELEMENT Item (S.No,ItemName,ItemNumber,Price,Quantity,Units,Amount)>
+<!ELEMENT S.No (#PCDATA)>
+<!ELEMENT ItemName (#PCDATA)>
+<!ELEMENT ItemNumber (#PCDATA)>
+<!ELEMENT Price (#PCDATA)>
+<!ELEMENT Quantity (#PCDATA)>
+<!ELEMENT Units (#PCDATA)>
+<!ELEMENT Amount (#PCDATA)>
