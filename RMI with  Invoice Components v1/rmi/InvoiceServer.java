@@ -92,9 +92,10 @@ public class InvoiceServer extends UnicastRemoteObject implements Invoice {
 			while ((b = fs.read(file)) != -1) {
 				baos.write(file, 0, b);
 			}
+			fs.close();
 			File ff=new File(fname + ".pdf");
 			ff.delete();
-			fs.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -116,9 +117,10 @@ public class InvoiceServer extends UnicastRemoteObject implements Invoice {
 			while ((b = fs.read(file)) != -1) {
 				baos.write(file, 0, b);
 			}
+			fs.close();
 			File ff=new File(fname + ".xls");
 			ff.delete();
-			fs.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
