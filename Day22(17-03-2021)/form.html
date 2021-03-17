@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<script>
+		function displayRange(Slider) {
+			document.getElementById("ratingValue").innerHTML=Slider.value;
+		}
+	</script>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Registration Form</title>
+		<style type="text/css">
+			input { background-color:pink; }
+			:valid { background-color:white; }
+		</style>
+	</head>
+	<body>
+		<h1>Employee Registration Form</h1>
+		<form action="thankYou.html">
+			<label for="fullName">Full Name:</label><br/>
+			<input type="text" name="fullName" placeholder="Enter your Name" autofocus required />*<br/>
+			<label for="gender">Gender:</label><br/>
+			<input type="radio" name="gender" id="male" value="male">
+			<label for="male">Male</label>
+			<input type="radio" name="gender" id="female" value="female">
+			<label for="female">Female</label><br/>
+			<label for="email">Email Id:</label><br/>
+			<input type="email" name="email" id="email" placeholder="Enter your Email" required />*<br/>
+			<label for="dateOfBirth">Date Of Birth:</label><br/>
+			<input type="date" name="dateOfBirth" id="dateOfBirth" required />*<br/>
+			<label for="age">Age:</label><br/>
+			<input type="number" name="age" id="age" value="21" min="18" max="100" step="1" size="6" required />*<br/>
+			<label for="rating">Years of Experience:</label><br/>
+			<input type="range" name="rating" id="rating" min="0" max="60" value="0" step="1" onchange="outputValue.value=rating.value" required />
+			<output name="outputValue">0</output>*</br>
+			<label for="phone">Mobile Number:</label><br/>
+			<input type="text" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="XXX-XXX-XXXX" required />*<br/>
+			<input type="submit" value="register"><br/>
+			<label for="hometown">HomeTown</label><br/>
+			<input list="htown" name="hometown" id="hometown">
+			<datalist id="htown">
+				<option value="Coimbatore">
+				<option value="chennai">
+			</datalist><br/>
+			<p>Fields Marked * are Mandatory.</p>
+		</form>
+	</body>
+</html>
