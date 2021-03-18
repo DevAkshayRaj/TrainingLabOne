@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<script type="text/javascript">
+		function calc() {
+			var amt = parseInt(document.forms[0].elements[0].value)
+			var years = parseInt(document.forms[0].elements[1].value)
+			var tot=(years*(years+1))/2
+			var temp=years;
+			var dep=0;
+			var prev=0;
+			document.write("<table><tr><th>Year</th><th>Depreciation Accumulated</th><th>Depreciation</th><th>Book Value</th></tr>")
+			for(var i=1;i<=years;i++){
+				dep=Math.round((amt*(temp/tot))*100)/100
+				temp=temp-1;
+				prev=Math.round((prev+dep)*100)/100
+				var b=Math.round((amt-prev)*100)/100
+				document.write("<tr><td>"+i+"</td><td>"+dep+"</td><td>"+prev+"</td><td>"+b+"</td></tr>")
+			}
+			document.write("</table>")
+		}
+	</script>
+	<form action="">
+		<br>Please Enter the Amount value:<input type=text value=" " name="input">
+		<br>Please Enter the Number of years:<input type=text value=" "name="input2"> 
+		<br>click me to calculate :<input type=button value="calculate" name="button1" onclick="calc();">
+	</form>
+	
+		
+	
+	
+</body>
+</html>

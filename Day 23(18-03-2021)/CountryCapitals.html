@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+	country =new Array(100)
+	capitals=new Array(100)
+	var i=0
+	var j=0
+	function get(){
+		var aa=document.forms[0].elements[3].value
+		for(var k=0;k<=i;k++){
+			if(country[k]===aa){
+				document.forms[0].elements[5].value=capitals[k]
+				break;
+			}
+			if(capitals[k]===aa){
+				document.forms[0].elements[5].value=country[k]
+				break;
+			}
+				
+		}
+	}
+	function store(){
+		var a=document.forms[0].elements[0].value
+		var b=document.forms[0].elements[1].value
+		country[i]=a
+		capitals[j]=b
+		i+=1
+		j+=1
+	}
+</script>
+
+	<form action="">
+		<br>Please Enter the Country Name:<input type=text value="" name="input">
+		<br>Please Enter the Capital Name:<input type=text value=""name="input2"> 
+		<br>click me to Store :<input type=button value="Store" name="button1" onclick="store();">
+		<br>Please Enter the Capital/Country Name:<input type=text value=""name="input3"> 
+		<br>click me Find:<input type=button value="Find" name="button2" onclick="get();">
+		<br>The Capital/Country Name is :<input type=text value=""name="input3"> 
+	</form>
+	
+</body>
+</html>

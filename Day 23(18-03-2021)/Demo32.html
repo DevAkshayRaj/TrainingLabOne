@@ -1,0 +1,30 @@
+<html>
+<head>
+</head>
+<body>
+	<SCRIPT>
+        function resetColors(){
+             self.document.bgColor = "white" 
+             var i
+             for(i=0; i< frames.length; i++)
+    		 top.frames[i].document.bgColor="white"                
+       }
+</SCRIPT>
+	<FORM>
+		<INPUT TYPE=BUTTON VALUE="Change Frame1 to Orange"
+			onclick="parent.frames[0].document.bgColor="orange">
+		<P>
+			<INPUT TYPE=BUTTON VALUE="Change Frame2 to Red"
+				onclick="parent.frames[1].document.bgColor="red">
+		<P>
+			<INPUT TYPE=BUTTON VALUE="Change Frame3 to Green"
+				onclick="parent.frames[2].document.bgColor="green">
+		<P>
+			<INPUT TYPE=BUTTON VALUE="Change Frame4 to Blue"
+				onclick="parent.frames[3].document.bgColor="blue">
+		<P>
+			<INPUT TYPE=BUTTON VALUE="Reset Colors" onclick="resetColors()">
+	</FORM>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function bankDetails(){
+	this.name=""
+	this.accno=0
+	this.type=""
+	this.balance=0
+	this.setValues=function(name,accno,type,balance){
+		this.name=name
+		this.accno=accno
+		this.type=type
+		this.balance=balance
+	}
+	this.deposit=function(amt){
+		this.balance+=amt
+	}
+	this.withdrac=function(amt){
+		if(this.balance>amt)
+			return amt
+		else 
+			alert("Low Balance")
+	}
+	this.checkBalance=function(){
+		return this.balance
+	}
+}
+
+function Bank(name,accno,type,balance){
+	this.name=name
+	this.accno=accno
+	this.type=type
+	this.balance=balance
+	this.deposit=deposit
+	this.checkBalance=checkBalance
+	
+}
+
+</script>
+</body>
+</html>

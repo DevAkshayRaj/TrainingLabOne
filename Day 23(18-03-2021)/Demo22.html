@@ -1,0 +1,20 @@
+<html>
+<head>
+</head>
+<body>
+	<script type="text/javascript">
+		function tot() {
+			var x = parseInt(document.Simple.first.value)
+			var y = parseInt(document.forms[0].elements[1].value)
+			document.Simple.sum.value = x + y
+		}
+	</script>
+	<form name="Simple">
+		First Number : <input type="TEXT" size="4" name="first" value=" "><br>
+		Second Number : <input type="TEXT" size="4" name="second" value=" "><br>
+		Click to get Sum: <input type="BUTTON" value="Click" onclick="tot();"><br>
+		The sum is :<input type="TEXT" name="sum" value=" "><br>
+	</form>
+	
+</body>
+</html>

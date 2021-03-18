@@ -1,0 +1,32 @@
+<html>
+<head>
+<script>
+	function display() {
+		document.write("<Br>Name : " + this.name )
+		document.write("<br>Address  : " + this.address )
+	}
+	function person(name, address) {
+		this.name = name
+		this.address = address
+		this.display = display
+	}
+	function list(object) {
+        for (var i in object) {
+           document.write("Property: ",i," Value: ",object[i], "<BR>");
+        }
+     }
+
+
+	Ramu = new person("Ramu", "Mumbai");
+	Akshay = new person("Akshay", "coimbatore");
+	
+	Ramu.display()
+	Akshay.display()
+	list(Ramu)
+	list(Akshay)
+</script>
+</head>
+<body>
+
+</body>
+</html>

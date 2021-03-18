@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Sales Figures</title>
+</head>
+<body>
+<script type="text/javascript">
+months=new Array(12)
+var index=0
+for(var i=0;i<months.length;i++){
+	months[i]=new Array(5)
+}
+function store(){
+	months[index][0]=document.forms[0].elements[0].value
+	months[index][1]=parseInt(document.forms[0].elements[1].value)
+	months[index][2]=parseInt(document.forms[0].elements[2].value)
+	months[index][3]=parseInt(document.forms[0].elements[3].value)
+	months[index][4]=months[index][1]+months[index][2]+months[index][3]
+	index+=1
+}
+function display(){
+	document.write("<table><tr><th>Months</th><th>North</th><th>South</th><th>central</th><th>Total</th></tr>")
+	for(var i=0;i<index;i++){
+		document.write("<tr><td>"+months[i][0]+"</td><td>"+months[i][1]+"</td><td>"+months[i][2]+"</td><td>"+months[i][3]+"</td><td>"+ months[i][4]+ "</td></tr>")
+	}
+	document.write("</table>")
+}
+</script>
+    <form action="">
+		<br>Please Enter the Month:<input type=text value="" name="input">
+		<br>Please Enter the North sales:<input type=text value=""name="input2"> 
+		<br>Please Enter the South sales:<input type=text value=""name="input2"> 
+		<br>Please Enter the central sales:<input type=text value=""name="input2"> 
+		<br>click me to Store :<input type=button value="store" name="button1" onclick="store();">
+		<br>click me to Show Report :<input type=button value="show result" name="button1" onclick="display();">
+	</form>
+</body>
+</html>
