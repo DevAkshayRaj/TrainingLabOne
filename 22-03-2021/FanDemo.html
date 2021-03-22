@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Paint Demo</title>
+</head>
+<body>
+<script>
+	function Fan() {
+		this.setState= function(state) {
+			this.state=state;
+		}
+		this.pull= function() {
+			this.state.execute(this);
+		}
+	}
+	function SwitchOffState() {
+		this.execute=function(Fan) {
+			Fan.setState(new SwitchOnState());
+			console.log("Switched On State!");
+		}
+	}
+	function SwitchOnState() {
+		this.execute=function(Fan) {
+			Fan.setState(new MediumState());
+			console.log("Medium State!");
+		}
+	}
+	function MediumState() {
+		this.execute=function(Fan) {
+			Fan.setState(new HighState());
+			console.log("High State!");
+		}
+	}
+	function HighState() {
+		this.execute=function(Fan) {
+			Fan.setState(new SwitchOffState());
+			console.log("Switched Off State!");
+		}
+	}
+	var kaithaan=new Fan();
+	kaithaan.setState(new SwitchOffState());
+	window.setInterval("kaithaan.pull();",500);
+</script>
+</body>
+</html>

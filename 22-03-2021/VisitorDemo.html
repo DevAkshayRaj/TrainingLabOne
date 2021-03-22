@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>Paint Demo</title>
+</head>
+<body>
+	<script>
+		function dog() {
+			this.play=function(item) {
+				item.execute();
+			}
+		}
+
+		function item() {
+			this.execute=function() {
+				
+			}
+		}
+		function stone() {
+			this.execute=function() {
+				//console.log("Caught in stone");
+				throw new DogBarkException();
+			}
+		}
+		function stick() {
+			this.execute=function() {
+				throw new DogBiteException();
+			}
+		}
+		stone.prototype=new item();
+		stick.prototype=new item();
+		stone.prototype.constructor=stone;       
+		stick.prototype.constructor=stick; 
+		function DogException() {
+			this.visit=new function() {
+				
+			}
+		}
+		function DogBiteException() {
+				this.visit=function() {
+					var handle=new Handler();
+					handle.handle2(this);
+			}	
+		}
+		function DogBarkException() {
+				this.visit=function() {
+					var handle=new Handler();
+					handle.handle1(this);
+			}	
+		}
+		var de=new DogException();       
+		DogBiteException.prototype=de;       
+		DogBiteException.prototype.constructor=DogBiteException;       
+		DogBarkException.prototype=de;       
+		DogBarkException.prototype.constructor=DogBarkException;       
+		
+		function Handler() {
+			this.handle1=function(dbark) {
+				console.log("Dog Barks!!");
+			}
+			this.handle2=function(dbite) {
+				console.log("Dog Bites!!");
+			}
+		}
+		function children() {
+			this.playwithdog=function(dog,item) {
+				try {
+					dog.play(item);
+				}
+				catch(e) {
+					//console.log("catch method executed!");
+					e.visit();
+				}
+			}
+		}
+		var bujji = new children();
+		var jimmy = new dog();
+		var Stone = new stone();
+		var Stick = new stick();
+		bujji.playwithdog(jimmy,Stone);
+	</script>
+</body>
+</html>
