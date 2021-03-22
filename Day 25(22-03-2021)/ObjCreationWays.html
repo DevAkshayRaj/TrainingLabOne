@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Types Of Object Creation</title>
+</head>
+<body>
+<script>
+	var p1=new Object();
+	p1.name="Ramu Galaxy Object!";
+	p1.age="21";
+	p1.getName=function() {
+		return this.name;
+	}
+	console.log(p1.getName());
+	
+	
+	var p2={
+			name:'Ramu Literal Constructor!',
+			getName:function() {
+				return this.name;
+			}
+	}
+	console.log(p2.getName());
+	
+	
+	var person3=function(name,age) {
+		var Person=new Object();
+		Person.name=name;
+		Person.age=age;
+		Person.getName=function() {
+			return this.name;
+		}
+		return Person;
+	}
+	var p3=new person3("ramu Factory Method!",20);
+	console.log(p3.getName());
+	
+	
+	function Person5(name) {
+		this.name=name;
+		this.getName=function(){
+			return this.name;
+		}
+		this.display=display;
+	}
+	function display() {
+		return this.name;
+	}
+	var p5=new Person5("Ramu function Constructor!");
+	console.log(p5.display());
+	console.log(p5.getName());
+	
+	
+	var p5copy=new p5.constructor("Ramu Deep Copy!");
+	console.log(p5copy.display());
+	console.log(p5copy.getName());
+	
+	
+	Person5.prototype.setName=function setName(name) {
+		this.name=name;
+	}
+	
+	
+	var p5_a=new Person5("Ramu Default Name!");
+	console.log(p5_a.display());
+	p5_a.setName("Ramu Name using Prototype!");
+	console.log(p5_a.display());
+	
+	
+	function Parent() {
+		this.getName=function() {
+			return this.name;
+		}
+	}
+	function Child() {
+		this.setName=function(name) {
+			this.name=name;
+		}
+	}
+	
+	Child.prototype=new Parent();
+	Child.prototype.constructor=Child;
+	
+	var c=new Child();
+	c.setName("Ramu Inheritance!");
+	console.log(c.getName());
+	</script>
+<p id="demo"></p>
+</body>
+</html>
