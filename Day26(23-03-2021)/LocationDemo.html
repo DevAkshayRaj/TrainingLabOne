@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Lat Long Demo</title>
+</head>
+<body>
+	<div id="display"></div>
+	<input type="button" value="getLocation" onclick="getLocation()" />
+	<script type="text/javascript">
+	var rlr=document.getElementById("display");
+	function getLocation(){
+		if(navigator.geolocation){
+			navigator.geolocation.getCurrentPosition(displayLocation);
+		}else{
+			rlr.innerHTML="Not Supported !!!!!"
+		}
+	}
+	function displayLocation(loc){
+		var lati=loc.coords.latitude;
+		var longi=loc.coords.longitude;
+		rlr.innerHTML=lati+"  "+longi;
+	}
+	</script>
+</body>
+</html>

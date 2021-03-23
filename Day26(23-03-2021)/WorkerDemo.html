@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+The Value of Count is : <output id="out"></output>
+<input type="button" value="start" onclick="start()"/>
+<input type="button" value="stop" onclick="stop()"/>
+
+<script type="text/javascript">
+	var wr;
+	var tar=document.getElementById("out");
+	function start(){
+		if(typeof(Worker)!=="undefined"){
+			if(typeof(w)=="undefined"){
+				w=new Worker("worker.js");
+			}
+			w.onmessage=function(event){
+				tar.innerHTML=event.data;
+			}
+			
+		}
+		else{
+			tar.innerHTML="Not Supported";
+		}
+	}
+	
+	function stop(){
+		w.terminate();
+		w=undefined;
+	}
+</script>
+</body>
+</html>

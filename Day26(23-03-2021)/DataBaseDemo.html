@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Drag Drop</title>
+</head>
+<body>
+	<div id="status"></div>
+	<script type="text/javascript">
+		dest=document.getElementById("status");
+			var db=openDatabase('name','1.0','Testing',2*1024*1024);
+			db.transaction(function(tx){
+				tx.executeSql("create table logs (id unique,log)");
+				tx.executeSql('INSERT INTO LOGS (id,log) VALUES (1,"test1")');
+				tx.executeSql('INSERT INTO LOGS (id,log) VALUES (2,"test2")');
+				dest.innrHTML="Table Created and two rows Inserted "; 
+			});
+			
+			db.transaction(function(tx){
+				
+			});
+			
+	</script>
+</body>
+</html>

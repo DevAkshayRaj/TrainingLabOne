@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Drag Drop</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+			function drop(event){
+				event.preventDefault();
+				var data=event.dataTransfer.getData("text");
+				event.target.appendChild(document.getElementById(data));
+			}
+			
+			function drag(e){
+				e.dataTransfer.setData("text",e.target.id)
+			}
+			
+			function allowDrop(e){
+				e.preventDefault();
+			}
+	</script>
+	<div id="destination"  ondrop="drop(event)" ondragover="allowDrop(event)" style="width:350px;height:70px;border:1px solid #AAAAAA"></div>
+	<br>
+	<img id="source" src="img.jpeg" draggable=true ondragstart="drag(event)" width="200" height=50>
+
+</body>
+</html>

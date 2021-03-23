@@ -1,0 +1,7 @@
+var i=0;
+function timedCount(){
+i+=1;
+postMessage(i);
+setTimeout("timedCount();",600);
+}
+timedCount();
