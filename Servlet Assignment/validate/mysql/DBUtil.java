@@ -28,7 +28,7 @@ public class DBUtil {
 //				String url = ps.getProperty("url");
 //				String uname = ps.getProperty("uname");
 //				String upass = ps.getProperty("upass");
-				con = DriverManager.getConnection("jdbc:mysql://192.168.0.8:3306/ey?characterEncoding=utf8", "root","rohitsharma45");
+				con = DriverManager.getConnection("jdbc:mysql://192.168.0.8:3306/dbname?characterEncoding=utf8", "root","rohitsharma45");
 				con.setAutoCommit(false);
 				thread.set(con);
 			}
