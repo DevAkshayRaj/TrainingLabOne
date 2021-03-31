@@ -7,16 +7,16 @@ public class ThreadResourceManagement {
 	public static void main(String[] args) {
 		ExecutorService es=Executors.newFixedThreadPool(2);
 		es.execute(()->{
-			Laptop laptop=EYOffice.getLaptop("ram");
-			Laptop laptop1=EYOffice.getLaptop("ram");
+			Laptop laptop=Office.getLaptop("ram");
+			Laptop laptop1=Office.getLaptop("ram");
 		});
 		es.execute(()->{
-			Laptop laptop=EYOffice.getLaptop("som");
-			Laptop laptop1=EYOffice.getLaptop("som");
+			Laptop laptop=Office.getLaptop("som");
+			Laptop laptop1=office.getLaptop("som");
 		});
 	}
 }
-class EYOffice {
+class Office {
 	private static ThreadLocal locker=new ThreadLocal();
 	public static Laptop getLaptop(String name) {
 		Laptop laptop=(Laptop)locker.get();
