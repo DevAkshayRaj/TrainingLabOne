@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="hiberdemo.AirConditionerDto" table="aircon" mutable="true">
+   
+        <id name="aid" unsaved-value="0" type="int">
+        	<generator class="increment"/> 
+        </id>
+        <property name="company"  not-null="true"/>
+        <property name="type"  not-null="true"/>
+        <property name="price">
+        	<column name="rate" sql-type="NUMERIC(12,2)"/>
+        </property>
+      <property name="desc" type="serializable">
+        	<column name="description" sql-type="blob"/>
+        </property>
+        
+     </class>
+
+</hibernate-mapping>

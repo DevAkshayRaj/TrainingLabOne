@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	
+    <class name="hibernateonetomany.Employee" table="EMPLOYEE">
+   
+        <id name="eid" type="java.lang.Integer">			
+			<generator class="hilo" />
+		</id>
+        <property name="name" />
+        <property name="salary" />
+        
+      <set name="address" table ="ADDRESS" lazy="true" inverse="true">
+        <key column="EMPLOYEE_EID"/>
+        <one-to-many class="hibernateonetomany.Address"/>
+      </set> 
+     
+	</class>
+	
+	<class name="hibernateonetomany.Address" table="ADDRESS">
+        <id name="aid" type="int" unsaved-value="0">
+            <generator class="hilo"/>
+        </id>
+        <property name="street" />
+        <property name="city" />
+        <property name="pin" />
+        <property name="doorno" />
+		<many-to-one name="emp" column="EMPLOYEE_EID" class="hibernateonetomany.Employee"/>     
+	</class>
+	
+	
+</hibernate-mapping>
